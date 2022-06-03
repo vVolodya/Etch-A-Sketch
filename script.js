@@ -1,7 +1,10 @@
 createBoard(16);
 
+let color = 'black';
+let click = true;
+
 document.querySelector('body').addEventListener('click', (e) => {
-	if(e.target.tagName != 'BUTTON') {
+	if(e.target.tagName != 'BUTTON' && e.target.tagName != 'INPUT') {
 		click = !click
 		if(click) {
 			document.querySelector('.mode').textContent = 'Mode: Coloring';
@@ -11,10 +14,7 @@ document.querySelector('body').addEventListener('click', (e) => {
 	}
 });
 
-let color = 'black';
-let click = true;
-
-function createBoard (size) {
+function createBoard(size) {
 
 	let board = document.querySelector('.board');
 	let squares = board.querySelectorAll('div');
